@@ -40,15 +40,15 @@ describe Beaker::Hcloud do
     double(:server1,
            id: 1,
            public_net: {
-             'ipv4' => {
-               'ip' => '192.168.0.1',
-               'dns_ptr' => [
+             'ipv4' => double(
+               ip: '192.168.0.1',
+               dns_ptr: [
                  {
                    'ip' => '192.168.0.1',
                    'dns_ptr' => 'server1.example.com',
                  },
                ],
-             },
+             ),
            },
            destroy: true,
            labels: { vm_delete_after: '1695385549' })
@@ -57,15 +57,15 @@ describe Beaker::Hcloud do
     double(:server2,
            id: 2,
            public_net: {
-             'ipv4' => {
-               'ip' => '192.168.0.2',
-               'dns_ptr' => [
+             'ipv4' => double(
+               ip: '192.168.0.2',
+               dns_ptr: [
                  {
                    'ip' => '192.168.0.2',
                    'dns_ptr' => 'server2.example.com',
                  },
                ],
-             },
+             ),
            },
            destroy: true,
            labels: { vm_delete_after: '1695385549' })
